@@ -1,4 +1,4 @@
-# tabble-soccer-league
+# tabble-soccer
 Tabble soccer tournament web app.
 
 ## What?
