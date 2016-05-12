@@ -1,5 +1,5 @@
-(defproject tabble-soccer "0.1.0-SNAPSHOT"
-  :description "Tabble soccer portal"
+(defproject table-soccer "0.1.0-SNAPSHOT"
+  :description "Table soccer portal"
   :url "TBA"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
@@ -7,4 +7,4 @@
                  [ring "1.4.0"]
                  [ring/ring-mock "0.3.0"]]
 
-  :main tabble-soccer.core)
+  :main table-soccer.core)
