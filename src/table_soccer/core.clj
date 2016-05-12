@@ -1,4 +1,4 @@
-(ns tabble-soccer.core
+(ns table-soccer.core
   (:require [ring.adapter.jetty :as jetty]
             [ring.middleware.reload :refer [wrap-reload]]))
 

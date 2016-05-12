@@ -1,6 +1,6 @@
-(ns tabble-soccer.core-test
+(ns table-soccer.core-test
   (:require [clojure.test :refer :all]
-            [tabble-soccer.core :refer :all]
+            [table-soccer.core :refer :all]
             [ring.mock.request :refer :all]))
 
 (deftest routes-test
