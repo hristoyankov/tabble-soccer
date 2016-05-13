@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hristoyankov/table-soccer.svg?branch=master)](https://travis-ci.org/hristoyankov/table-soccer)
+
 # table-soccer
 Table soccer tournament web app.
 
