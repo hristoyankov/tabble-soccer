@@ -15,6 +15,11 @@
        :body "<h1> About table soccer. </h1>"
        :headers {}}
 
+      (= "/players" path)
+      {:status 200
+       :body "empty"
+       :headers {}}
+      
       :else
       {:status 404
        :body "<h1> Page not found </h1>"
@@ -24,5 +29,3 @@
 
 (defn -main [port]
   (jetty/run-jetty (wrap-reload #'app) {:port (Integer. port)}))
-              
-

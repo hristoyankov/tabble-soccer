@@ -14,4 +14,10 @@
       (is (re-matches #".*<h1>.*About table soccer.*</h1>.*" (:body response)))))
   (testing "Page not found"
     (let [response (app (request :get "/bogus_route"))]
-      (is (= (:status response) 404)))))
+      (is (= (:status response) 404))))
+
+  (testing "Players"
+    (let [response (app (request :get "/players"))]
+      (is (= (:status response) 200)))))
+
+
