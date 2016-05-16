@@ -1,7 +1,10 @@
 (ns table-soccer.core-test
   (:require [clojure.test :refer :all]
+            [clojure.string :as string]
             [table-soccer.core :refer :all]
-            [ring.mock.request :refer :all]))
+            [ring.mock.request :refer :all]
+            [hickory.core :refer [parse as-hickory]]
+            [hickory.select :as s]))
 
 (deftest routes-test
   (testing "Homepage"
@@ -17,7 +20,15 @@
       (is (= (:status response) 404))))
 
   (testing "Players"
-    (let [response (app (request :get "/players"))]
-      (is (= (:status response) 200)))))
-
-
+    (let [response (app (request :get "/players"))
+          body (-> response :body parse as-hickory)]
+      (is (= (:status response) 200))
+      ;; TODO Wrap in smaller functions to make it more readable
+      (is (= "Players page" (-> (s/select (s/child (s/tag :head)
+                                               (s/tag :title))
+                                          body)
+                                first :content first string/trim)))
+      (is (= "Hello players" (-> (s/select (s/descendant (s/tag :body)
+                                                         (s/tag :h1))
+                                           body)
+                                 first :content first string/trim))))))

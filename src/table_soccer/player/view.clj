@@ -3,4 +3,11 @@
             [hiccup.page :refer [html5]]))
 
 (defn players-page [players]
-  "boofoo")
+  (html5 {:lang :en}
+         [:head
+          [:title "Players page"]]
+         [:body
+          [:div
+           [:h1 "Hello players"]]]))
+          
+           
