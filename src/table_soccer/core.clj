@@ -15,7 +15,7 @@
   (GET "/players" [] handle-index-players)
   (route/not-found handle-not-found))
 
-(def app (wrap-resource routes "resources"))
+(def app (wrap-resource routes "static"))
 
 (defn -main [port]
   (jetty/run-jetty (wrap-reload #'app) {:port (Integer. port)}))
